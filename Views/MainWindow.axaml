@@ -3,6 +3,7 @@
         xmlns:vm="using:MockAuthPlayground.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:MockAuthPlayground.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MockAuthPlayground.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -14,7 +15,19 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    
+    <Window.DataTemplates>
+        <DataTemplate DataType="vm:LoginViewModel">
+            <views:LoginView />
+        </DataTemplate>
+        <DataTemplate DataType="vm:RegisterViewModel">
+            <views:RegisterView />
+        </DataTemplate>
+        <DataTemplate DataType="vm:DashboardViewModel">
+            <views:DashboardView />
+        </DataTemplate>
+    </Window.DataTemplates>
+    
+    <ContentControl Content="{Binding CurrentView}" />
 
 </Window>

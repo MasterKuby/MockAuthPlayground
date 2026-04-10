@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MockAuthPlayground.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="800"
+             x:DataType="vm:LoginViewModel"
+             x:Class="MockAuthPlayground.Views.LoginView">
+    
+    <Grid>
+    <StackPanel>
+        <Button Content="Sign In"/>
+        <Button Content="Create an account" Command="{Binding GoToRegister}"/>
+    </StackPanel>
+    </Grid>
+    
+</UserControl>
