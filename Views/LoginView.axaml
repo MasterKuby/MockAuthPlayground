@@ -7,11 +7,29 @@
              x:DataType="vm:LoginViewModel"
              x:Class="MockAuthPlayground.Views.LoginView">
     
-    <Grid>
-    <StackPanel>
-        <Button Content="Sign In"/>
-        <Button Content="Create an account" Command="{Binding GoToRegister}"/>
-    </StackPanel>
-    </Grid>
+    <Panel Background="{DynamicResource SystemBaseLowColor}">
+    <Viewbox Stretch="Uniform" VerticalAlignment="Center">
+        <StackPanel Spacing="15" Margin="20" Width="250" Height="500" >
+            
+            <TextBlock Text="Sign in" FontSize="32" FontWeight="Bold" FontFamily="Comic Sans MS" />
+            
+            <StackPanel Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="or"/>
+                <Button Command="{Binding GoToRegister}" Content="create an account" Background="Transparent" Foreground="{DynamicResource SystemAccentColor}" Padding="0"/>
+            </StackPanel>
+
+            <TextBox Watermark="Username" Text="{Binding Username}"/>
+            <TextBox Watermark="Password" Text="{Binding Password}" PasswordChar="*" />
+
+            <CheckBox Content="Remember me" />
+
+            <Button Content="Sign in" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Command="{Binding Login}" />
+
+            <Button Content="Sign in with KUBY™" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
+                    Background="DarkRed" Foreground="White" />
+
+        </StackPanel>
+    </Viewbox>
+        </Panel>
     
 </UserControl>
