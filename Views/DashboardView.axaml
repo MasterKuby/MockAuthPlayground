@@ -4,7 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:MockAuthPlayground.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:DataType="vm:LoginViewModel"
+             x:DataType="vm:DashboardViewModel"
              x:Class="MockAuthPlayground.Views.DashboardView">
-    Welcome to Avalonia!
+    
+    <Panel Background="{DynamicResource SystemBaseLowColor}">
+        <StackPanel Orientation="Vertical" Spacing="20" Margin="20">
+            
+            <StackPanel Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="Hello," FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
+                <TextBlock Text="{Binding Username}" FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="Funds: " FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
+                <TextBlock Text="{Binding Funds}" FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
+            </StackPanel>
+            
+            <Button Content="Sign out" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Command="{Binding Logout}" />
+            
+        </StackPanel>
+    </Panel>
 </UserControl>

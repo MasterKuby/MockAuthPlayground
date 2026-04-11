@@ -9,7 +9,8 @@
     
     <Panel Background="{DynamicResource SystemBaseLowColor}">
     <Viewbox Stretch="Uniform" VerticalAlignment="Center">
-        <StackPanel Spacing="15" Margin="20" Width="250" Height="500" >
+        <StackPanel Spacing="15" Margin="20" Width="250" Height="400" >
+            
             
             <TextBlock Text="Sign in" FontSize="32" FontWeight="Bold" FontFamily="Comic Sans MS" />
             
@@ -30,6 +31,6 @@
 
         </StackPanel>
     </Viewbox>
-        </Panel>
+    </Panel>
     
 </UserControl>

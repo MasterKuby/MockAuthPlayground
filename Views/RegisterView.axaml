@@ -4,7 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:MockAuthPlayground.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:DataType="vm:LoginViewModel"
+             x:DataType="vm:RegisterViewModel"
              x:Class="MockAuthPlayground.Views.RegisterView">
-    Welcome to Register!
+    
+    <Panel Background="{DynamicResource SystemBaseLowColor}">
+    <Viewbox Stretch="Uniform" VerticalAlignment="Center">
+        <StackPanel Spacing="15" Margin="20" Width="250" Height="400" >
+            
+            
+            <TextBlock Text="Sign Up" FontSize="32" FontWeight="Bold" FontFamily="Comic Sans MS" />
+            
+            <StackPanel Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="or"/>
+                <Button Command="{Binding GoToLogin}" Content="login to an account" Background="Transparent" Foreground="{DynamicResource SystemAccentColor}" Padding="0"/>
+            </StackPanel>
+
+            <TextBox Watermark="Username" Text="{Binding Username}"/>
+            <TextBox Watermark="Password" Text="{Binding Password}" PasswordChar="*" />
+
+            <CheckBox Content="Remember me" />
+
+            <Button Content="Sign up" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Command="{Binding Register}" />
+
+            <Button Content="Sign up with KUBY™" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
+                    Background="DarkRed" Foreground="White" />
+
+        </StackPanel>
+    </Viewbox>
+    </Panel>
+    
 </UserControl>

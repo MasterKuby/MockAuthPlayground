@@ -16,8 +16,8 @@ public partial class LoginViewModel : ViewModelBase
     }
     // Boilerplate
     
-    [ObservableProperty] private string username = "";
-    [ObservableProperty] private string password = "";
+    [ObservableProperty] private string _username = "";
+    [ObservableProperty] private string _password = "";
     
     public void GoToRegister()
     {
