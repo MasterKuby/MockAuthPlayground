@@ -7,21 +7,38 @@
              x:DataType="vm:DashboardViewModel"
              x:Class="MockAuthPlayground.Views.DashboardView">
     
-    <Panel Background="{DynamicResource SystemBaseLowColor}">
-        <StackPanel Orientation="Vertical" Spacing="20" Margin="20">
-            
-            <StackPanel Orientation="Horizontal" Spacing="5">
-                <TextBlock Text="Hello," FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
-                <TextBlock Text="{Binding Username}" FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
-            </StackPanel>
-            
-            <StackPanel Orientation="Horizontal" Spacing="5">
-                <TextBlock Text="Funds: " FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
-                <TextBlock Text="{Binding Funds}" FontSize="69" FontWeight="Bold" FontFamily="Comic Sans MS" />
-            </StackPanel>
-            
-            <Button Content="Sign out" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Command="{Binding Logout}" />
-            
-        </StackPanel>
-    </Panel>
+    <Panel Background="{DynamicResource SystemBaseLowColor}" IsVisible="{Binding IsWelcomeVisible}">
+            <Viewbox Stretch="Uniform" VerticalAlignment="Center">
+                <StackPanel Spacing="15" Margin="20" Width="250" Height="400">
+                    
+                    <Grid ColumnDefinitions="*, Auto" VerticalAlignment="Center">
+                        <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="2">
+                            
+                            <TextBlock FontSize="22" FontWeight="Bold" FontFamily="Comic Sans MS">
+                                <Run Text="Welcome, " /><Run Text="{Binding Username}" /><Run Text="." />
+                            </TextBlock>
+                            
+                            <TextBlock Text="What would you like to do today?" FontSize="10" FontFamily="Comic Sans MS" />
+                        </StackPanel>
+                        
+                        <Border Grid.Column="1" Width="50" Height="50" CornerRadius="25" Background="DodgerBlue" ClipToBounds="True" Margin="5,0,0,0">
+                            <Image Source="avares://MockAuthPlayground/Assets/user.png" Stretch="UniformToFill" />
+                        </Border>
+                    </Grid>
+                    
+                    <TextBlock Text="Funds: 000" FontSize="30" FontWeight="Bold" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Margin="0,10,0,10" />
+
+                    <Grid ColumnDefinitions="*, *">
+                        <Button Grid.Column="0" Margin="0,0,5,0" Content="Change&#x0a;Username" FontSize="12" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Background="{DynamicResource SystemAccentColor}" />
+                        <Button Grid.Column="1" Margin="5,0,0,0" Content="Change&#x0a;Password" FontSize="12" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Background="{DynamicResource SystemAccentColor}" />
+                    </Grid>
+                    
+                    <Button Content="Transfer Funds" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="{DynamicResource SystemAccentColor}" />
+                    <Button Content="Sign out" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="{DynamicResource SystemAccentColor}" Command="{Binding Logout}"/>
+
+                    <Control Height="60" /> <TextBlock Text="USER ID: 000" FontSize="10" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Foreground="Gray" />
+                </StackPanel>
+            </Viewbox>
+        </Panel>
+                
 </UserControl>

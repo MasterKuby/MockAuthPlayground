@@ -15,6 +15,7 @@ public partial class DashboardViewModel : ViewModelBase
     [ObservableProperty] private string _password;
     [ObservableProperty] private int _funds;
     [ObservableProperty] private int _id;
+    [ObservableProperty] private bool _isWelcomeVisible = true;
     
     public DashboardViewModel(MainWindowViewModel mainViewModel, User user)
     {
